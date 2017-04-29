@@ -57,6 +57,7 @@ using namespace ooqpei;
 namespace ooqpei {
 
 bool OoqpEigenInterface::isInDebugMode_ = false;
+int OoqpEigenInterface::iter_ = 0;
 
 bool OoqpEigenInterface::solve(const Eigen::SparseMatrix<double, Eigen::RowMajor>& Q,
                                const Eigen::VectorXd& c,
@@ -184,7 +185,7 @@ bool OoqpEigenInterface::solve(const Eigen::SparseMatrix<double, Eigen::RowMajor
 
   // Solve.
   int status = s->solve(prob, vars, resid);
-
+  iter_ = s->iter;
   if ((status == SUCCESSFUL_TERMINATION) || (ignoreUnknownError && (status == UNKNOWN)))
     vars->x->copyIntoArray(&x.coeffRef(0));
 

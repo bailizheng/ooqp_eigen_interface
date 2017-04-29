@@ -159,6 +159,8 @@ class OoqpEigenInterface
     isInDebugMode_ = isInDebugMode;
   }
 
+  static int getNumIters() { return iter_; }
+
  private:
   /*!
    * Determine which limits are active and which are not.
@@ -189,6 +191,7 @@ class OoqpEigenInterface
 
  private:
   static bool isInDebugMode_;
+  static int iter_;
 };
 
 } /* namespace ooqpei */
