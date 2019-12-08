@@ -47,11 +47,11 @@ Since ooqp_catkin can't be distributed, I modified this package to add a find_pa
 
 And run in the ooqp folder
 
-	export CXXFLAGS="-O -fPIC"
-	make -j4
+	./configure CXXFLAGS="-O -fPIC"
+	make
 	sudo make install
 
-After that you can build using `catkin_make` or `catkin build`. If using the former change CMakeLists.txt
+After that you can build using `catkin_make` or `catkin build`. **If using the former change CMakeLists.txt**（line 47）
 
 	set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/cmake")
 

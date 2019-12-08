@@ -45,6 +45,7 @@ add_definitions(-std=c++11)
 
 find_package(Eigen3 REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+# set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/home/zuzu/Motion_planning/hw5/src/ooqp_eigen_interface/cmake")
 MESSAGE( STATUS "CMAKE_MODULE_PATH: " ${CMAKE_MODULE_PATH} )
 find_package(ooqp REQUIRED)
 find_package(catkin REQUIRED)
